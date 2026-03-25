@@ -1,2 +1,5 @@
 .vite/
 .env
+dist/
+build/
+package.json
