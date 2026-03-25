@@ -5,7 +5,7 @@ function App() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const loadData = async () => {
-    const res = await fetch("http://localhost:5000/api/culture");
+    const res = await fetch("https://catalogue-backend-cfpg.onrender.com/api/culture");
     const result = await res.json();
     setData(result);
   };
