@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const filePath = path.join(process.cwd(), "database", "data.json");
+const filePath = path.join(__dirname, "../../database/data.json");
 
 // GET
 app.get("/api/culture", (req, res) => {
