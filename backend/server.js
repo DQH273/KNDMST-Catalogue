@@ -9,10 +9,22 @@ app.use(cors());
 app.use(express.json());
 
 const filePath = path.join(__dirname, "..", "database", "data.json");
+
 // GET
 app.get("/api/culture", (req, res) => {
-  const data = JSON.parse(fs.readFileSync(filePath));
-  res.json(data);
+  try {
+    if (!fs.existsSync(filePath)) {
+      return res.status(500).json({ error: "data.json not found" });
+    }
+
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(raw || "[]");
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 // POST
