@@ -2,12 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const filePath = path.join(__dirname, "../database/data.json");
+const filePath = path.join(process.cwd(), "database", "data.json");
 
 // GET
 app.get("/api/culture", (req, res) => {
@@ -38,4 +39,4 @@ app.delete("/api/culture/:id", (req, res) => {
   res.json(data);
 });
 
-app.listen(5000, () => console.log("Server chạy tại http://localhost:5000"));
+app.listen(PORT, () => console.log("Server running"));
