@@ -5,7 +5,7 @@
     "desc": "Bánh mì Việt Nam với nhân đa dạng, kết hợp văn hóa Pháp và Việt",
     "detail": "Bánh mì là loại bánh mì baguette, thường kẹp pate, thịt, rau thơm, dưa leo, và sốt đặc trưng. Đây là món ăn nhanh phổ biến ở khắp nơi, phản ánh sự giao thoa văn hóa Pháp – Việt.",
     "tag": "Đồ ăn",
-    "img": "./images/banhmi.png"
+    "img": "https://catalogue-backend-cfpg.onrender.com/images/banhmi.png"
   },
   {
     "id": 2,
