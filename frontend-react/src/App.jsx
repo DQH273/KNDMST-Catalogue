@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -5,7 +6,10 @@ function App() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const loadData = async () => {
-    const res = await fetch("https://catalogue-backend-cfpg.onrender.com/api/culture");
+    const res = await fetch(
+      "https://catalogue-backend-cfpg.onrender.com/api/culture",
+      { cache: "no-store" },
+    );
     const result = await res.json();
     setData(result);
   };
